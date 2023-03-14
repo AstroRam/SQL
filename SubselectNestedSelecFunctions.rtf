@@ -1,0 +1,345 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2708
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 HelveticaNeue-Bold;\f2\fnil\fcharset0 HelveticaNeue;
+\f3\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red25\green28\blue31;\red214\green219\blue224;\red223\green33\blue121;
+}
+{\*\expandedcolortbl;;\cssrgb\c12941\c14510\c16078;\cssrgb\c87059\c88627\c90196;\cssrgb\c90980\c24314\c54902;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+\
+Sub select or nested Select;\
+\
+Select EMP_ID, F_NAME, L_NAME, SALARY\
+From employees\
+Where SALARY < (select AVG(SALARY) from employees);\
+\
+Sub select in list of columns:\
+Select EMP_ID, SALARY,\
+( select AVG(SALARY) from employees )\
+AS AVG_SALARY\
+From employees ;\
+\
+Implicit Join :\
+ Select * from employees, departments \
+Where employees.DEP_ID = \
+departments.DEPT_ID_DEP;\
+\
+\
+Select * from employees E, departments D\
+Where E.DEP_ID = D.DEPT_ID_DEP;\
+\
+\
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2512\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f1\b\fs32 \cf2 \expnd0\expndtw0\kerning0
+Command\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 Syntax\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 Description\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 Example\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2512\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f2\b0 \cf2 COUNT\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT COUNT(column_name) FROM table_name WHERE condition;
+\f2\fs32 \cf2 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 COUNT
+\f2\fs32 \cf2  function returns the number of rows that matches a specified criterion.\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT COUNT(dep_id) FROM employees;
+\f2\fs32 \cf2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2512\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 AVG\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT AVG(column_name) FROM table_name WHERE condition;
+\f2\fs32 \cf2 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 AVG
+\f2\fs32 \cf2  function returns the average value of a numeric column.\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT AVG(salary) FROM employees;
+\f2\fs32 \cf2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2512\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 SUM\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT SUM(column_name) FROM table_name WHERE condition;
+\f2\fs32 \cf2 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SUM
+\f2\fs32 \cf2  function returns the total sum of a numeric column.\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT SUM(salary) FROM employees;
+\f2\fs32 \cf2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2512\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 MIN\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT MIN(column_name) FROM table_name WHERE condition;
+\f2\fs32 \cf2 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 MIN
+\f2\fs32 \cf2  function returns the smallest value of the SELECTed column.\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT MIN(salary) FROM employees;
+\f2\fs32 \cf2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2512\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 MAX\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT MAX(column_name) FROM table_name WHERE condition;
+\f2\fs32 \cf2 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 MAX
+\f2\fs32 \cf2  function returns the largest value of the SELECTed column.\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT MAX(salary) FROM employees;
+\f2\fs32 \cf2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2512\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 ROUND\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT ROUND(2number, decimals, operation) AS RoundValue;
+\f2\fs32 \cf2 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 ROUND
+\f2\fs32 \cf2  function rounds a number to a specified number of decimal places.\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT ROUND(salary) FROM employees;
+\f2\fs32 \cf2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2512\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 LENGTH\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT LENGTH(column_name) FROM table;
+\f2\fs32 \cf2 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 LENGTH
+\f2\fs32 \cf2  function returns the length of a string (in bytes).\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT LENGTH(f_name) FROM employees;
+\f2\fs32 \cf2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2512\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 UCASE\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT UCASE(column_name) FROM table;
+\f2\fs32 \cf2 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 UCASE
+\f2\fs32 \cf2  function that displays the column name in each table in uppercase.\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT UCASE(f_name) FROM employees;
+\f2\fs32 \cf2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2512\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 DISTINCT\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT DISTINCT(column_name) FROM table;
+\f2\fs32 \cf2 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 DISTINCT
+\f2\fs32 \cf2  function is used to display data without duplicates.\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT DISTINCT(UCASE(f_name)) FROM employees;
+\f2\fs32 \cf2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2512\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 DAY\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT DAY(column_name) FROM table
+\f2\fs32 \cf2 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 DAY
+\f2\fs32 \cf2  function returns the day of the month for a given date\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT DAY(b_date) FROM employees where emp_id = 'E1002';
+\f2\fs32 \cf2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2512\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 CURRENT DATE\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT (CURRENT DATE - COLUMN) FROM table;
+\f2\fs32 \cf2 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 CURRENT DATE
+\f2\fs32 \cf2  is used to display the current date.This can be subtracted from the previous date to get the difference.\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT YEAR(CURRENT DATE - b_date) As AGE, CURRENT_DATE, b_date FROM employees;
+\f2\fs32 \cf2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2512\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 Subquery\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT column_name [, column_name ] FROM table1 [, table2 ] WHERE column_name OPERATOR (SELECT column_name [, column_name ] FROM table1 [, table2 ] [WHERE])
+\f2\fs32 \cf2 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 Subquery
+\f2\fs32 \cf2  is a query within another SQL query and embedded within the WHERE clause.\
+A subquery is used to return data that will be used in the main query as a condition to further restrict the data to be retrieved.\cell 
+\pard\intbl\itap1\pardeftab720\sa320\partightenfactor0
+
+\f3\fs28 \cf4 SELECT emp_id, fmame, lname, salary FROM employees where salary < (SELECT AVG(salary) FROM employees);
+\f2\fs32 \cf2 \uc0\u8232 
+\f3\fs28 \cf4 SELECT * FROM ( SELECT emp_id, f_name, l_name, dep_id FROM employees) AS emp4all;
+\f2\fs32 \cf2 \
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 \
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT * FROM employees WHERE job_id IN (SELECT job_ident FROM jobs);
+\f2\fs32 \cf2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2512\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 Implicit Inner Join\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT column_name(s) FROM table1, table2 WHERE table1.column_name = table2.column_name;
+\f2\fs32 \cf2 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 Implicit Inner Join
+\f2\fs32 \cf2  combines the two or more records but displays only matching values in both tables. Inner join applies only the specified columns.\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT * FROM employees, jobs where employees.job_id = jobs.job_ident;
+\f2\fs32 \cf2 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth2512\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx2160
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx6480
+\clvertalt \clshdrawnil \clwWidth7536\clftsWidth3 \clbrdrt\brdrs\brdrw20\brdrcf3 \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt240 \clpadl240 \clpadb240 \clpadr240 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+\cf2 Implicit Cross Join\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT column_name(s) FROM table1, table2;
+\f2\fs32 \cf2 \cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 Implicit Cross Join
+\f2\fs32 \cf2  defines as a Cartesian product where the number of rows in the first table multiplied by the number of rows in the second table..\cell 
+\pard\intbl\itap1\pardeftab720\partightenfactor0
+
+\f3\fs28 \cf4 SELECT * FROM employees, jobs;\cell \lastrow\row
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\
+}
